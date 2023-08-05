@@ -1,3 +1,44 @@
-.homepage {
-    
+.homepage__header {
+    display: flex;
+    justify-content: end;
+    padding: 25px 20px;
+    align-items: center;
+    height: 10px;
+    gap: 16px;
+}
+
+.homepage__header-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.homepage__header-link:hover {
+    text-decoration: underline;
+}
+
+.homepage__button-apps {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.homepage__button-apps:hover {
+    background-color: #343434;
+    border-radius: 50px;
+}
+
+.homepage__button-profile {
+    height: 32px;
+    width: 32px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
