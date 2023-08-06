@@ -41,6 +41,10 @@
   gap: 15px;
 }
 
+.search__buttonContainer--hidden {
+  display: none !important;
+}
+
 .search__button {
   background-color: #303134;
   padding: 11px 16px;

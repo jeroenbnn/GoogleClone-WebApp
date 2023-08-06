@@ -3,14 +3,25 @@ import SearchVector from "../assets/Magnify.svg";
 import MicVector from "../assets/Mic.svg";
 import SearchByImgVector from "../assets/SearchByImgVector.svg";
 import "../styles/Search.css";
+import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../context";
+import { actionTypes } from "../reducer";
 
-function Search() {
+function Search({ hideButtons = false }) {
+  const [{}, dispatch] = useStateValue();
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
   const search = (e) => {
     e.preventDefault();
+    navigate("/search");
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: input,
+    });
   };
   return (
-    <div className="search">
+    <form className="search">
       <div className="search__inputContainer">
         <img src={SearchVector} alt="Search" />
         <input
@@ -29,13 +40,22 @@ function Search() {
           alt="Search by img"
         />
       </div>
-      <div className="search__buttonContainer">
-        <button onClick={search} className="search__button">
-          Google Search
-        </button>
-        <button className="search__button">I'm Feeling Lucky</button>
-      </div>
-    </div>
+      {!hideButtons ? (
+        <div className="search__buttonContainer">
+          <button type="submit" onClick={search} className="search__button">
+            Google Search
+          </button>
+          <button className="search__button">I'm Feeling Lucky</button>
+        </div>
+      ) : (
+        <div className="search__buttonContainer--hidden">
+          <button type="submit" onClick={search} className="search__button">
+            Google Search
+          </button>
+          <button className="search__button">I'm Feeling Lucky</button>
+        </div>
+      )}
+    </form>
   );
 }
 
