@@ -28,7 +28,7 @@ function Homepage() {
       <div className="homepage__body">
         <img style={{ height: 92, width: 272 }} src={MainLogo} alt="Logo" />
         <div className="homepage__inputContainer">
-          <Search hideButtons />
+          <Search />
         </div>
       </div>
     </div>
