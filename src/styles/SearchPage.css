@@ -68,16 +68,31 @@
   gap: 20px;
 }
 
-.searchpage__appsButton {
-  background-color: transparent;
-  border: none;
-  margin-bottom: 2;
-  height: 40px;
-  width: 40px;
-  border-radius: 25px;
-  cursor: pointer;
+.searchpage__results {
+  padding: 15px 40% 10px 12%;
 }
 
-.searchpage__appsButton:hover {
-  background-color: #3c4043;
+.searchpage__resultsCount {
+  color: #9aa0a6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.searchpage__result {
+  margin: 40px 0px;
+}
+.searchpage__resultImage {
+  height: 28px;
+  width: 28px;
+  border-radius: 50px;
+  object-fit: contain;
+}
+
+.searchpage__resultTitle {
+  margin: 10px 0px;
+}
+
+.searchpage__result > a {
+  color: #8ab4f8;
+  text-decoration: none;
 }
